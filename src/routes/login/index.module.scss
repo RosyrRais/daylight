@@ -1,0 +1,39 @@
+// 基础圆形样式
+%circle-base {
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+}
+
+.circle-1 {
+  @extend %circle-base;
+  width: 6rem;
+  height: 6rem;
+  font-size: 3rem;
+  background-color: oklch(70.5% 0.213 47.604);
+  left: calc(50% - 380px);
+  top: 14rem;
+}
+
+.circle-2 {
+  @extend %circle-base;
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  background-color: oklch(72.3% 0.219 149.579);
+  left: calc(50% - 220px);
+  top: 27.5rem;
+}
+
+.circle-3 {
+  @extend %circle-base;
+  width: 8rem;
+  height: 8rem;
+  font-size: 4rem;
+  background-color: oklch(68.5% 0.169 237.323);
+  left: calc(50% + 280px);
+  top: 20rem;
+}
