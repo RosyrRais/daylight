@@ -1,4 +1,6 @@
 import { appTools, defineConfig } from '@edenx/app-tools';
+import bffPlugin from '@edenx/plugin-bff';
+import guluxPlugin from '@edenx/plugin-gulux';
 import tailwindcssPlugin from '@edenx/plugin-tailwind';
 
 // https://edenx.bytedance.net/configure/app/usage
@@ -15,5 +17,7 @@ export default defineConfig({
       bundler: 'rspack', // Set to 'webpack' to enable webpack
     }),
     tailwindcssPlugin(),
+    guluxPlugin(),
+    bffPlugin(),
   ],
 });

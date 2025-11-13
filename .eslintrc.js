@@ -23,6 +23,7 @@ module.exports = {
         // eslint-disable-next-line no-magic-numbers
         '@typescript-eslint/indent': ['error', 2],
         '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/naming-convention': 'off',
       },
     },
     {
@@ -31,6 +32,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-unused-vars': 'off',
         'no-unused-vars': 'off',
+        '@typescript-eslint/naming-convention': 'off',
       },
     },
     {
@@ -42,6 +44,7 @@ module.exports = {
         'no-autofix/react/jsx-no-leaked-render': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
         'no-unused-vars': 'off',
+        '@typescript-eslint/naming-convention': 'off',
       },
     },
   ],

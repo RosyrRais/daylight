@@ -3,17 +3,17 @@ import { useMemo } from 'react';
 import { FormProvider } from '@formily/react';
 import { SchemaField } from '@/component/formily/schemaField';
 import { Button, Typography } from '@douyinfe/semi-ui';
-import {
-  IconCode,
-  IconCommand,
-  IconImage,
-  IconSend,
-} from '@douyinfe/semi-icons';
+import { IconCode, IconImage, IconSend } from '@douyinfe/semi-icons';
 import style from './index.module.scss';
+import { getUserInfo } from '@api/user';
 
 const Index: React.FC = () => {
   const { Title } = Typography;
   const loginForm = useMemo(() => easyCreateForm(), []);
+
+  const handleLogin = () => {
+    getUserInfo();
+  };
 
   return (
     <div className="flex justify-center items-center bg-white relative pt-60">
@@ -53,7 +53,7 @@ const Index: React.FC = () => {
           </SchemaField>
         </FormProvider>
         <div className="flex justify-center gap-4">
-          <Button>登录</Button>
+          <Button onClick={handleLogin}>登录</Button>
           <Button>注册</Button>
         </div>
       </div>

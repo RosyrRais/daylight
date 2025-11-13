@@ -10,12 +10,21 @@
       ],
       "@shared/*": [
         "./shared/*"
+      ],
+      "@api/*": [
+        "./api/lambda/*"
       ]
     },
     "types": [
       "react",
       "react-dom"
-    ]
+    ],
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "target": "ES2017",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false
   },
   "include": [
     "src",
@@ -23,7 +32,8 @@
     "config",
     "edenx.config.ts",
     "tailwind.config.ts",
-    "tailwind.config.ts"
+    "tailwind.config.ts",
+    "api"
   ],
   "exclude": [
     "**/node_modules"
