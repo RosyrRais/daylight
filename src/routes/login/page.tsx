@@ -6,11 +6,13 @@ import { Button, Toast, Typography } from '@douyinfe/semi-ui';
 import { IconCode, IconImage, IconSend } from '@douyinfe/semi-icons';
 import style from './index.module.scss';
 import { post as login } from '@api/login';
+import { useNavigate } from '@edenx/runtime/router';
 
 const Index: React.FC = () => {
   const { Title } = Typography;
   const loginForm = useMemo(() => easyCreateForm(), []);
   const { DataMapper } = SchemaField;
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
     const loginData = DataMapper.getValues(loginForm);
@@ -19,6 +21,7 @@ const Index: React.FC = () => {
     if (res.code === 0) {
       // 登录成功
       // 跳转逻辑 etc
+      navigate('/dashboard');
     } else {
       // 登录失败
       Toast.error(res.message);
