@@ -2,8 +2,8 @@ import type { ApplicationConfig } from '@gulux/gulux';
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
-  name: 'app',
-  psm: 'edenx.http.example',
+  name: 'daylight',
+  psm: 'edenx.http.daylight',
   applicationHttp: {},
   typegoose: {
     clients: {
@@ -13,5 +13,12 @@ export default {
         useUnifiedTopology: true,
       },
     },
+  },
+  session: {
+    // 用于保存session信息的cookie key
+    key: 'http_daylight_sid',
+    // session过期时间 (ms)
+    maxAge: 86400000,
+    // others
   },
 } as ApplicationConfig;

@@ -9,4 +9,7 @@ export default {
   typegoose: {
     enable: true,
   },
+  session: {
+    enable: true,
+  },
 };
