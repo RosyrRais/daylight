@@ -1,10 +1,13 @@
 import { Outlet } from '@edenx/runtime/router';
 import './index.css';
+import { AnimatePresence } from 'motion/react';
 
 const Layout = (): JSX.Element => (
-  <div>
-    <Outlet />
-  </div>
+  <AnimatePresence>
+    <div>
+      <Outlet />
+    </div>
+  </AnimatePresence>
 );
 
 export default Layout;
