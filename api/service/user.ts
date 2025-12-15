@@ -7,10 +7,6 @@ export default class UserService {
   @Inject(User)
   private UserModel: ModelType<User>;
 
-  public async getAllUser() {
-    return await this.UserModel.find();
-  }
-
   /**
    * 验证用户身份
    * @param username 用户名
@@ -22,6 +18,11 @@ export default class UserService {
     password: string,
   ): Promise<boolean> {
     const user = await this.UserModel.findOne({ username, password });
+    return !!user;
+  }
+
+  public async userExist(username: string): Promise<boolean> {
+    const user = await this.UserModel.findOne({ username });
     return !!user;
   }
 }

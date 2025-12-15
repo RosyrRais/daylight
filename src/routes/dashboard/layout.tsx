@@ -2,14 +2,17 @@ import { IconCode, IconImage, IconMail, IconSend } from '@douyinfe/semi-icons';
 import { motion } from 'motion/react';
 import Button from '@/component/button';
 import { Outlet, useNavigate } from '@edenx/runtime/router';
+import { BlurCardCss } from '@/component';
 
 const Index: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex relative">
+    <div className="flex relative p-16 gap-16">
       <motion.div
-        className="flex flex-col justify-between items-center p-8 m-16 rounded-xl backdrop-blur-md border border-gray-300 w-[12rem] h-[22rem]"
+        className={`${
+          BlurCardCss
+        } flex flex-col justify-between items-center p-8 w-[12rem] h-[22rem]`}
         initial={{ x: -500 }}
         animate={{ x: 0 }}
       >
@@ -42,7 +45,7 @@ const Index: React.FC = () => {
           onClick={() => navigate('/dashboard/email')}
         />
       </motion.div>
-      <div className="mt-16 mr-16 flex-1 rounded-xl backdrop-blur-md border border-gray-300  shadow-xl">
+      <div className={`${BlurCardCss} mx-8 flex-1`}>
         <Outlet />
       </div>
     </div>

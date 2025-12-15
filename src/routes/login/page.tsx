@@ -8,6 +8,7 @@ import style from './index.module.scss';
 import { post as login } from '@api/login';
 import { useNavigate } from '@edenx/runtime/router';
 import { motion, AnimatePresence } from 'motion/react';
+import { BlurCardCss } from '@/component';
 
 const Index: React.FC = () => {
   const { Title } = Typography;
@@ -66,7 +67,7 @@ const Index: React.FC = () => {
 
       <AnimatePresence>
         <motion.div
-          className="rounded-xl p-5 backdrop-blur-md border border-gray-300"
+          className={`${BlurCardCss} p-5`}
           initial={{ y: 0, opacity: 1 }}
           animate={{
             y: showBg ? 0 : -500,
