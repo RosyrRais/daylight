@@ -2,9 +2,6 @@ import { Database, Prop, getModelForClass } from '@gulux/gulux/typegoose';
 
 @Database('daylightDB')
 export class Email {
-  @Prop({ unique: true, required: true })
-  public emailId!: string;
-
   @Prop({ required: true })
   public recipient!: string;
 
@@ -13,6 +10,12 @@ export class Email {
 
   @Prop({ default: false })
   public isRead?: boolean;
+
+  @Prop({ default: false })
+  public recipientDel?: boolean;
+
+  @Prop({ default: false })
+  public senderDel?: boolean;
 
   @Prop({ required: true })
   public content!: string;
